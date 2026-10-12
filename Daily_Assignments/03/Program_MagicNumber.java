@@ -7,13 +7,21 @@ public class Program_MagicNumber {
 		int num = 172;
 		int sum = 0;
 
-		for (; num > 0;) {
-			int lastDigit = num % 10;// 2
-			num = num / 10;// 17
-			sum = sum + lastDigit;
+		for (; num > 9;) {
+			for (; num > 0;) {
+				int lastDigit = num % 10;// 1
+				sum = sum + lastDigit;// 10
+				num = num / 10;// 0
+			}
+			num = sum;// 1
+			sum = 0;
+
 		}
-		System.out.println(sum);
-		System.out.println("Final Digit=1+0=1");
+		System.out.println("Final value of num:" + num);
+		if (num == 1) {
+			System.out.println("Magic Number");
+		}
+
 	}
 
 }
